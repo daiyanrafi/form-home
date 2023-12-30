@@ -1,0 +1,94 @@
+// StartPage.tsx
+import React, { useState } from 'react';
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  Button,
+  Typography,
+  Paper,
+  Container,
+  FormControl,
+  FormLabel,
+} from '@mui/material';
+
+type StartPageProps = {
+  onNext: () => void;
+};
+
+const StartPage: React.FC<StartPageProps> = ({ onNext }) => {
+  const [selectedOption1, setSelectedOption1] = useState<string | undefined>('');
+  const [selectedOption2, setSelectedOption2] = useState<string | undefined>('');
+  const [showWarning, setShowWarning] = useState(false);
+
+  const handleChange1 = (value: string) => {
+    setSelectedOption1(value);
+    setShowWarning(value === 'yes1');
+    setSelectedOption2(undefined);
+  };
+
+  const handleChange2 = (value: string) => {
+    setSelectedOption2(value);
+    setShowWarning(value === 'no2');
+  };
+
+  const handleNext = () => {
+    onNext();
+  };
+
+  return (
+    <Container component="main" maxWidth="xs">
+      <Paper elevation={3} style={{ padding: '2rem', marginTop: '2rem' }}>
+        <Typography variant="h6" gutterBottom>
+          Questionnaire:
+        </Typography>
+        <FormControl component="fieldset">
+          <FormLabel component="legend">Are you without electricity, gas, or water?</FormLabel>
+          <RadioGroup
+            row
+            aria-label="question1"
+            name="question1"
+            value={selectedOption1}
+            onChange={(e) => handleChange1(e.target.value)}
+          >
+            <FormControlLabel value="yes1" control={<Radio />} label="Yes" />
+            <FormControlLabel value="no1" control={<Radio />} label="No" />
+          </RadioGroup>
+          {showWarning && (
+            <Typography color="error" variant="body2">
+              Please contact your foreman at {selectedOption1 === 'yes1' ? '+376423926719' : '+00393946334'}
+            </Typography>
+          )}
+        </FormControl>
+
+        {selectedOption1 === 'no1' && (
+          <FormControl component="fieldset">
+            <FormLabel component="legend">Have you contacted your provider to try to resolve your complaint?</FormLabel>
+            <RadioGroup
+              row
+              aria-label="question2"
+              name="question2"
+              value={selectedOption2}
+              onChange={(e) => handleChange2(e.target.value)}
+            >
+              <FormControlLabel value="yes2" control={<Radio />} label="Yes" />
+              <FormControlLabel value="no2" control={<Radio />} label="No" />
+            </RadioGroup>
+            {showWarning && (
+              <Typography color="error" variant="body2">
+                Please contact your foreman at +00393946334
+              </Typography>
+            )}
+            {selectedOption2 === 'yes2' && (
+              <Button variant="contained" color="primary" onClick={handleNext} style={{ marginTop: '2rem' }}>
+                Next
+              </Button>
+            )}
+          </FormControl>
+        )}
+      </Paper>
+    </Container>
+  );
+};
+
+export default StartPage;
