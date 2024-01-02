@@ -17,7 +17,7 @@ export function AddressForm({
   updateFields,
 }: AddressFormProps) {
   return (
-    <div style={{ marginBottom: '16px' }}>
+    <div style={{ marginBottom: '10px' }}>
       <Typography variant="h6" gutterBottom>
         Address
       </Typography>

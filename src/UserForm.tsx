@@ -47,7 +47,7 @@ export function UserForm({
   updateFields,
 }: UserFormProps) {
   return (
-    <div style={{ marginBottom: '16px' }}>
+    <div style={{ marginBottom: '10px' }}>
       <Typography variant="h6" gutterBottom>
         Your Details
       </Typography>
@@ -57,6 +57,7 @@ export function UserForm({
     <TextField
       fullWidth
       select
+      required
       label="Title"
       value={title}
       onChange={(e) => updateFields({ title: e.target.value })}

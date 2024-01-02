@@ -349,7 +349,7 @@ export function ComplaintCont({
         </Grid>
 
 
-        <Grid item xs={15}>
+        {/* <Grid item xs={15}>
           <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
             Is there anything about you or your personal circumstances that we need to consider, that will help us with your complaint?
           </Typography>
@@ -361,7 +361,21 @@ export function ComplaintCont({
             value={complaintDescription}
             onChange={(e) => updateFields({ complaintDescription: e.target.value })}
           />
-        </Grid>
+        </Grid> */}
+
+       <Grid item xs={15}>
+        <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+            Is there anything about you or your personal circumstances that we need to consider, that will help us with your complaint?
+          </Typography>
+          <TextField
+            fullWidth
+            label="Please write here."
+            required
+            multiline
+            value={complaintDescription}
+            onChange={(e) => updateFields({ complaintDescription: e.target.value })}
+          />
+        </Grid> 
 
         <Grid item xs={15}>
           <FormControlLabel

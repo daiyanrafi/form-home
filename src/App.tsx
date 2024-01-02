@@ -5,7 +5,7 @@ import { UserForm } from './UserForm';
 import { AddressForm } from './AddressForm';
 // import { AccountForm } from './AccountForm';
 import { ComplaintForm } from './Complaint';
-import { IncidentAddressForm } from './AccountForm';
+import { IncidentAddressForm } from './IncidentAddressForm';
 import StartPage from './StartPage';
 import { ComplaintCont } from './ComplaintCont';
 import { FinalizeSubmissionForm } from './FinalizeSubmissionForm';

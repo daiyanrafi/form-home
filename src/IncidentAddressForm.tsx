@@ -26,7 +26,7 @@ export function IncidentAddressForm({
   updateFields,
 }: IncidentAddressFormProps) {
   return (
-    <div style={{ marginBottom: '16px' }}>
+    <div style={{ marginBottom: '10px' }}>
       <Typography variant="h6" gutterBottom>
         Incident Address
       </Typography>
