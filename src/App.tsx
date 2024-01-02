@@ -144,19 +144,22 @@ function App() {
     alert('Successful Account Creation');
   }
 
-  return (
-    <Container
-      component="main"
-      maxWidth={false}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        background: '#d7e3f5'
-      }}
-    >
+return (
+  <Container
+    component="main"
+    maxWidth={false}
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100vh',
+      background: '#d7e3f5'
+    }}
+  >
+    {showStartPage ? (
+      <StartPage onNext={startForm} />
+    ) : (
       <Paper
         style={{
           padding: '2rem',
@@ -166,31 +169,42 @@ function App() {
         }}
       >
         <form onSubmit={onSubmit}>
-          {!showStartPage && (
-            <div style={{ textAlign: 'right' }}>
-              {currentStepIndex + 1} / {steps.length}
-            </div>
-          )}
+          <div style={{ textAlign: 'right' }}>
+            {currentStepIndex + 1} / {steps.length}
+          </div>
           {step}
           <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
             {!isFirstStep && (
-              <Button type="button"
+              <Button
+                type="button"
                 onClick={back}
                 style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
               >
                 Back
               </Button>
             )}
-            {!showStartPage && (
-              <Button type="submit"
+            {!isLastStep && (
+              <Button
+                type="submit"
                 style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
-              >{isLastStep ? 'Finish' : 'Next'}</Button>
+              >
+                Next
+              </Button>
+            )}
+            {isLastStep && (
+              <Button
+                type="submit"
+                style={{ backgroundColor: 'blue', color: 'white' }}
+              >
+                Finish
+              </Button>
             )}
           </div>
         </form>
       </Paper>
-    </Container>
-  );
+    )}
+  </Container>
+);
 }
 
 export default App;
