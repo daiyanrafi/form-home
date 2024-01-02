@@ -147,13 +147,14 @@ function App() {
   return (
     <Container
       component="main"
-      maxWidth="sm"
+      maxWidth={false}
       style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
+        background: '#d7e3f5'
       }}
     >
       <Paper
@@ -161,6 +162,7 @@ function App() {
           padding: '2rem',
           borderRadius: '.5rem',
           fontFamily: 'Arial',
+          maxWidth: '600px',
         }}
       >
         <form onSubmit={onSubmit}>
