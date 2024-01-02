@@ -63,6 +63,7 @@ export function ComplaintForm({
         <Grid item xs={12}>
           <TextField
             fullWidth
+            required
             label="Account Number"
             value={accountNumber}
             onChange={(e) => updateFields({ accountNumber: e.target.value })}

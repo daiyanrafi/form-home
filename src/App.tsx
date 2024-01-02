@@ -5,9 +5,10 @@ import { UserForm } from './UserForm';
 import { AddressForm } from './AddressForm';
 // import { AccountForm } from './AccountForm';
 import { ComplaintForm } from './Complaint';
-import MyChoiceGroup from './Selection';
 import { IncidentAddressForm } from './AccountForm';
 import StartPage from './StartPage';
+import { ComplaintCont } from './ComplaintCont';
+import { FinalizeSubmissionForm } from './FinalizeSubmissionForm';
 
 type FormData = {
   title: string;
@@ -26,19 +27,31 @@ type FormData = {
   state: string;
   zip: string;
   email: string;
-  password: string;
-  //complaint-page
+  // password: string;
+  //complaint-page---------------
   supplier: string;
   service: string;
   accountNumber: string;
   complaintDescription: string;
   resolutionDescription: string;
-  //Incident-page
+  //Incident-page------------------
   // address: string;
   address1: string;
   // city: string;
   postcode: string;
   // state: string;
+  //complaint-cont---------------
+  concession: string;
+  concessionTypes: string[];
+  hasComplaint: string;
+  // complaintDescription: string;
+  agree: boolean;
+  treeIdentification: string;
+  //final-page
+  bestTime: string;
+  howDidYouHear: string;
+  attachFile: File | null;
+  isRobot: boolean;
 };
 
 const INITIAL_DATA: FormData = {
@@ -58,7 +71,7 @@ const INITIAL_DATA: FormData = {
   state: '',
   zip: '',
   email: '',
-  password: '',
+  // password: '',
   //complaint-page
   supplier: '',
   service: '',
@@ -71,6 +84,18 @@ const INITIAL_DATA: FormData = {
   // city: '',
   postcode: '',
   // state: '',
+  //complant-cont
+  concession: '',
+  concessionTypes: [],
+  hasComplaint: '',
+  // complaintDescription: '',
+  agree: false,
+  treeIdentification: '',
+  //final-page
+  bestTime: '',
+  howDidYouHear: '',
+  isRobot: false,
+  attachFile: null,
 };
 
 function App() {
@@ -95,15 +120,13 @@ function App() {
   }
 
   const steps = [
-    // <MyChoiceGroup/>,
     <UserForm {...data} updateFields={updateFields} />,
     <AddressForm {...data} updateFields={updateFields} />,
     <IncidentAddressForm {...data} updateFields={updateFields} />,
-    // <AccountForm {...data} updateFields={updateFields} />,
-    <ComplaintForm {...data} updateFields={updateFields}/>
+    <ComplaintForm {...data} updateFields={updateFields} />,
+    <ComplaintCont {...data} updateFields={updateFields} />,
+    <FinalizeSubmissionForm {...data} updateFields={updateFields} />
   ];
-
-  // const step = steps[currentStepIndex];
 
   const step = showStartPage ? (
     <StartPage onNext={startForm} />
@@ -120,34 +143,6 @@ function App() {
     console.log(data);
     alert('Successful Account Creation');
   }
-
-  // return (
-  //   <Container component="main" maxWidth="sm">
-  //     <Paper
-  //       style={{
-  //         padding: '2rem',
-  //         margin: '2rem auto',
-  //         borderRadius: '.5rem',
-  //         fontFamily: 'Arial',
-  //       }}
-  //     >
-  //       <form onSubmit={onSubmit}>
-  //         <div style={{ textAlign: 'right' }}>
-  //           {currentStepIndex + 1} / {steps.length}
-  //         </div>
-  //         {step}
-  //         <div style={{ marginTop: '1rem', marginLeft: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
-  //           {!isFirstStep && (
-  //             <Button type="button" onClick={back}>
-  //               Back
-  //             </Button>
-  //           )}
-  //           <Button type="submit" style={{ backgroundColor: 'blue', color: 'white' }}>{isLastStep ? 'Finish' : 'Next'}</Button>
-  //         </div>
-  //       </form>
-  //     </Paper>
-  //   </Container>
-  // );
 
   return (
     <Container
@@ -175,14 +170,19 @@ function App() {
             </div>
           )}
           {step}
-          <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'flex-end' }}>
+          <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
             {!isFirstStep && (
-              <Button type="button" onClick={back}>
+              <Button type="button"
+                onClick={back}
+                style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
+              >
                 Back
               </Button>
             )}
             {!showStartPage && (
-              <Button type="submit">{isLastStep ? 'Finish' : 'Next'}</Button>
+              <Button type="submit"
+                style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
+              >{isLastStep ? 'Finish' : 'Next'}</Button>
             )}
           </div>
         </form>
