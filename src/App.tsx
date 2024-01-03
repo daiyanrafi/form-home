@@ -12,121 +12,121 @@ import { FinalizeSubmissionForm } from './FinalizeSubmissionForm';
 import { RepresentativeForm } from './Representative';
 
 type FormData = {
-  title: string;
-  firstName: string;
-  lastName: string;
-  postalAddress: string;
-  address: string;
-  suburb: string;
-  postcode: string;
-  country: string;
-  preferredContact: string;
-  landline: string;
-  mobile: string;
-  age: string;
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-  email: string;
-  // password: string;
-  //complaint-page---------------
-  supplier: string;
-  service: string;
-  accountNumber: string;
-  complaintDescription: string;
-  resolutionDescription: string;
-  //Incident-page------------------
-  // address: string;
-  address1: string;
-  // city: string;
-  // postcode: string;
-  // state: string;
-  //complaint-cont---------------
-  concession: string;
-  concessionTypes: string[];
-  hasComplaint: string;
-  // complaintDescription: string;
-  agree: boolean;
-  treeIdentification: string;
-  //final-page
-  bestTime: string;
-  howDidYouHear: string;
-  attachFile: File | null;
-  isRobot: boolean;
-   // RepresentativeForm fields
-   representativeTitle: string;
-   representativeFirstName: string;
-   representativeLastName: string;
-   representativePostalAddress: string;
-  //  representativeAddress: string;
-   representativeSuburb: string;
-   representativePostcode: string;
-   representativeState: string;
-   representativeCountry: string;
-   representativePreferredContact: string;
-   representativeLandline: string;
-   representativeMobile: string;
-   representativeEmail: string;
+  //user-info-page
+  user_title: string;
+  user_firstName: string;
+  user_lastName: string;
+  user_postalAddress: string;
+  user_address: string;
+  user_suburb: string;
+  user_postcode: string;
+  user_state: string;
+  user_country: string;
+  user_preferredContact: string;
+  user_landline: string;
+  user_mobile: string;
+  user_email: string;
+  // RepresentativeForm-page fields
+  representativeTitle: string;
+  representativeFirstName: string;
+  representativeLastName: string;
+  representativePostalAddress: string;
+  representativeSuburb: string;
+  representativePostcode: string;
+  representativeState: string;
+  representativeCountry: string;
+  representativePreferredContact: string;
+  representativeLandline: string;
+  representativeMobile: string;
+  representativeEmail: string;
+  //for address page
+  address_street: string;
+  address_city: string;
+  address_state: string;
+  address_zip: string;
+  //Incident-address-page
+  incident_address: string;
+  incident_address1: string;
+  incident_city: string;
+  incident_postcode: string;
+  incident_state: string;
+  //complaint page 
+  complaint_supplier: string;
+  complaint_service: string;
+  complaint_accountNumber: string;
+  complaint_complaintDescription: string;
+  complaint_resolutionDescription: string;
+  //complaint-cont page
+  complaint_cont_concession: string;
+  complaint_cont_concessionTypes: string[];
+  complaint_cont_hasComplaint: string;
+  complaint_cont_complaintDescription: string;
+  complaint_cont_agree: boolean;
+  complaint_cont_treeIdentification: string;
+  //final-page-submission
+  final_sub_bestTime: string;
+  final_sub_howDidYouHear: string;
+  final_sub_attachFile: File | null;
+  final_sub_isRobot: boolean;
 };
 
 const INITIAL_DATA: FormData = {
-  title: '',
-  firstName: '',
-  lastName: '',
-  postalAddress: '',
-  address: '',
-  suburb: '',
-  // postcode:'',
-  country: '',
-  preferredContact: '',
-  landline: '',
-  mobile: '',
-  age: '',
-  street: '',
-  city: '',
-  state: '',
-  zip: '',
-  email: '',
-  // password: '',
-  //complaint-page
-  supplier: '',
-  service: '',
-  accountNumber: '',
-  complaintDescription: '',
-  resolutionDescription: '',
-  //Incident-page
-  // address: '',
-  address1: '',
-  // city: '',
-  postcode: '',
-  // state: '',
-  //complant-cont
-  concession: '',
-  concessionTypes: [],
-  hasComplaint: '',
-  // complaintDescription: '',
-  agree: false,
-  treeIdentification: '',
-  //final-page
-  bestTime: '',
-  howDidYouHear: '',
-  isRobot: false,
-  attachFile: null,
-   // RepresentativeForm initial data
-   representativeTitle: '',
-   representativeFirstName: '',
-   representativeLastName: '',
-   representativePostalAddress: '',
-  //  representativeAddress: '',
-   representativeSuburb: '',
-   representativePostcode: '',
-   representativeState: '',
-   representativeCountry: '',
-   representativePreferredContact: '',
-   representativeLandline: '',
-   representativeMobile: '',
-   representativeEmail: '',
+  //use-info-page
+  user_title: '',
+  user_firstName: '',
+  user_lastName: '',
+  user_postalAddress: '',
+  user_address: '',
+  user_suburb: '',
+  user_postcode: '',
+  user_state: '',
+  user_country: '',
+  user_preferredContact: '',
+  user_landline: '',
+  user_mobile: '',
+  user_email: '',
+  // RepresentativeForm-data page
+  representativeTitle: '',
+  representativeFirstName: '',
+  representativeLastName: '',
+  representativePostalAddress: '',
+  representativeSuburb: '',
+  representativePostcode: '',
+  representativeState: '',
+  representativeCountry: '',
+  representativePreferredContact: '',
+  representativeLandline: '',
+  representativeMobile: '',
+  representativeEmail: '',
+  //for address page
+  address_street: '',
+  address_city: '',
+  address_state: '',
+  address_zip: '',
+  //Incident-address-page
+  incident_address: '',
+  incident_address1: '',
+  incident_city: '',
+  incident_postcode: '',
+  incident_state: '',
+  //complaint page 
+  complaint_supplier: '',
+  complaint_service: '',
+  complaint_accountNumber: '',
+  complaint_complaintDescription: '',
+  complaint_resolutionDescription: '',
+  //complaint-cont page
+  complaint_cont_concession: '',
+  complaint_cont_concessionTypes: [],
+  complaint_cont_hasComplaint: '',
+  complaint_cont_complaintDescription: '',
+  complaint_cont_agree: false,
+  complaint_cont_treeIdentification: '',
+  //final-page-submission
+  final_sub_bestTime: '',
+  final_sub_howDidYouHear: '',
+  final_sub_attachFile: null,
+  final_sub_isRobot: false,
 };
 
 function App() {
@@ -152,7 +152,7 @@ function App() {
 
   const steps = [
     <UserForm {...data} updateFields={updateFields} />,
-    <RepresentativeForm {...data} updateFields={updateFields}/>,
+    <RepresentativeForm {...data} updateFields={updateFields} />,
     <AddressForm {...data} updateFields={updateFields} />,
     <IncidentAddressForm {...data} updateFields={updateFields} />,
     <ComplaintForm {...data} updateFields={updateFields} />,
@@ -176,67 +176,67 @@ function App() {
     alert('Successful Account Creation');
   }
 
-return (
-  <Container
-    component="main"
-    maxWidth={false}
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      background: '#d7e3f5'
-    }}
-  >
-    {showStartPage ? (
-      <StartPage onNext={startForm} />
-    ) : (
-      <Paper
-        style={{
-          padding: '2rem',
-          borderRadius: '.5rem',
-          fontFamily: 'Arial',
-          maxWidth: '600px',
-        }}
-      >
-        <form onSubmit={onSubmit}>
-          <div style={{ textAlign: 'right' }}>
-            {currentStepIndex + 1} / {steps.length}
-          </div>
-          {step}
-          <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
-            {!isFirstStep && (
-              <Button
-                type="button"
-                onClick={back}
-                style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
-              >
-                Back
-              </Button>
-            )}
-            {!isLastStep && (
-              <Button
-                type="submit"
-                style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
-              >
-                Next
-              </Button>
-            )}
-            {isLastStep && (
-              <Button
-                type="submit"
-                style={{ backgroundColor: 'blue', color: 'white' }}
-              >
-                Finish
-              </Button>
-            )}
-          </div>
-        </form>
-      </Paper>
-    )}
-  </Container>
-);
+  return (
+    <Container
+      component="main"
+      maxWidth={false}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        background: '#d7e3f5'
+      }}
+    >
+      {showStartPage ? (
+        <StartPage onNext={startForm} />
+      ) : (
+        <Paper
+          style={{
+            padding: '2rem',
+            borderRadius: '.5rem',
+            fontFamily: 'Arial',
+            maxWidth: '600px',
+          }}
+        >
+          <form onSubmit={onSubmit}>
+            <div style={{ textAlign: 'right' }}>
+              {currentStepIndex + 1} / {steps.length}
+            </div>
+            {step}
+            <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'flex-end' }}>
+              {!isFirstStep && (
+                <Button
+                  type="button"
+                  onClick={back}
+                  style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
+                >
+                  Back
+                </Button>
+              )}
+              {!isLastStep && (
+                <Button
+                  type="submit"
+                  style={{ marginRight: '8px', backgroundColor: 'blue', color: 'white' }}
+                >
+                  Next
+                </Button>
+              )}
+              {isLastStep && (
+                <Button
+                  type="submit"
+                  style={{ backgroundColor: 'blue', color: 'white' }}
+                >
+                  Finish
+                </Button>
+              )}
+            </div>
+          </form>
+        </Paper>
+      )}
+    </Container>
+  );
 }
 
 export default App;

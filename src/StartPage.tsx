@@ -38,7 +38,7 @@ const StartPage: React.FC<StartPageProps> = ({ onNext }) => {
 
   return (
     <Container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Paper elevation={3} style={{ padding: '2rem', marginTop: '2rem'}}>
+      <Paper elevation={3} style={{ padding: '2rem', marginTop: '2rem' }}>
         <Typography variant="h6" gutterBottom>
           Questionnaire:
         </Typography>

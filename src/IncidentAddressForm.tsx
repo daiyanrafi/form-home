@@ -3,26 +3,26 @@ import React from 'react';
 import { TextField, Typography, Grid } from '@mui/material';
 
 type IncidentAddressFormProps = {
-  address: string;
-  address1: string;
-  city: string;
-  postcode: string;
-  state: string;
+  incident_address: string;
+  incident_address1: string;
+  incident_city: string;
+  incident_postcode: string;
+  incident_state: string;
   updateFields: (fields: Partial<{
-    address: string;
-    address1: string;
-    city: string;
-    postcode: string;
-    state: string;
+    incident_address: string;
+    incident_address1: string;
+    incident_city: string;
+    incident_postcode: string;
+    incident_state: string;
   }>) => void;
 };
 
 export function IncidentAddressForm({
-  address,
-  address1,
-  city,
-  postcode,
-  state,
+  incident_address,
+  incident_address1,
+  incident_city,
+  incident_postcode,
+  incident_state,
   updateFields,
 }: IncidentAddressFormProps) {
   return (
@@ -38,16 +38,16 @@ export function IncidentAddressForm({
             autoFocus
             label="Address"
             required
-            value={address}
-            onChange={(e) => updateFields({ address: e.target.value })}
+            value={incident_address}
+            onChange={(e) => updateFields({ incident_address: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
           <TextField
             fullWidth
             label="Address 1"
-            value={address1}
-            onChange={(e) => updateFields({ address1: e.target.value })}
+            value={incident_address1}
+            onChange={(e) => updateFields({ incident_address1: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -55,8 +55,8 @@ export function IncidentAddressForm({
             fullWidth
             label="City"
             required
-            value={city}
-            onChange={(e) => updateFields({ city: e.target.value })}
+            value={incident_city}
+            onChange={(e) => updateFields({ incident_city: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -64,8 +64,8 @@ export function IncidentAddressForm({
             fullWidth
             label="Postcode"
             required
-            value={postcode}
-            onChange={(e) => updateFields({ postcode: e.target.value })}
+            value={incident_postcode}
+            onChange={(e) => updateFields({ incident_postcode: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -73,8 +73,8 @@ export function IncidentAddressForm({
             fullWidth
             label="State"
             required
-            value={state}
-            onChange={(e) => updateFields({ state: e.target.value })}
+            value={incident_state}
+            onChange={(e) => updateFields({ incident_state: e.target.value })}
           />
         </Grid>
       </Grid>

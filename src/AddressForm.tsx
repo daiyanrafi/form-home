@@ -2,18 +2,18 @@
 import { TextField, Typography, Grid } from '@mui/material';
 
 type AddressFormProps = {
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
-  updateFields: (fields: Partial<{ street: string; city: string; state: string; zip: string }>) => void;
+  address_street: string;
+  address_city: string;
+  address_state: string;
+  address_zip: string;
+  updateFields: (fields: Partial<{ address_street: string; address_city: string; address_state: string; address_zip: string }>) => void;
 };
 
 export function AddressForm({
-  street,
-  city,
-  state,
-  zip,
+  address_street,
+  address_city,
+  address_state,
+  address_zip,
   updateFields,
 }: AddressFormProps) {
   return (
@@ -30,8 +30,8 @@ export function AddressForm({
             label="Street"
             required
             type="text"
-            value={street}
-            onChange={(e) => updateFields({ street: e.target.value })}
+            value={address_street}
+            onChange={(e) => updateFields({ address_street: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -40,8 +40,8 @@ export function AddressForm({
             label="City"
             required
             type="text"
-            value={city}
-            onChange={(e) => updateFields({ city: e.target.value })}
+            value={address_city}
+            onChange={(e) => updateFields({ address_city: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -50,8 +50,8 @@ export function AddressForm({
             label="State"
             required
             type="text"
-            value={state}
-            onChange={(e) => updateFields({ state: e.target.value })}
+            value={address_state}
+            onChange={(e) => updateFields({ address_state: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -60,8 +60,8 @@ export function AddressForm({
             label="Zip"
             required
             type="text"
-            value={zip}
-            onChange={(e) => updateFields({ zip: e.target.value })}
+            value={address_zip}
+            onChange={(e) => updateFields({ address_zip: e.target.value })}
           />
         </Grid>
       </Grid>

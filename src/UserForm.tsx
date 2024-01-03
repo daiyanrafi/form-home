@@ -3,50 +3,50 @@ import React from 'react';
 import { TextField, Typography, Grid, MenuItem, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 
 type UserFormProps = {
-  title: string;
-  firstName: string;
-  lastName: string;
-  postalAddress: string;
-  address: string;
-  suburb: string;
-  postcode: string;
-  state: string;
-  country: string;
-  preferredContact: string;
-  landline: string;
-  mobile: string;
-  email: string;
+  user_title: string;
+  user_firstName: string;
+  user_lastName: string;
+  user_postalAddress: string;
+  user_address: string;
+  user_suburb: string;
+  user_postcode: string;
+  user_state: string;
+  user_country: string;
+  user_preferredContact: string;
+  user_landline: string;
+  user_mobile: string;
+  user_email: string;
   updateFields: (fields: Partial<{
-    title: string;
-    firstName: string;
-    lastName: string;
-    postalAddress: string;
-    address: string;
-    suburb: string;
-    postcode: string;
-    state: string;
-    country: string;
-    preferredContact: string;
-    landline: string;
-    mobile: string;
-    email: string;
+    user_title: string;
+    user_firstName: string;
+    user_lastName: string;
+    user_postalAddress: string;
+    user_address: string;
+    user_suburb: string;
+    user_postcode: string;
+    user_state: string;
+    user_country: string;
+    user_preferredContact: string;
+    user_landline: string;
+    user_mobile: string;
+    user_email: string;
   }>) => void;
 };
 
 export function UserForm({
-  title,
-  firstName,
-  lastName,
-  postalAddress,
-  address,
-  suburb,
-  postcode,
-  state,
-  country,
-  preferredContact,
-  landline,
-  mobile,
-  email,
+  user_title,
+  user_firstName,
+  user_lastName,
+  user_postalAddress,
+  user_address,
+  user_suburb,
+  user_postcode,
+  user_state,
+  user_country,
+  user_preferredContact,
+  user_landline,
+  user_mobile,
+  user_email,
   updateFields,
 }: UserFormProps) {
   return (
@@ -62,8 +62,8 @@ export function UserForm({
             select
             required
             label="Title"
-            value={title}
-            onChange={(e) => updateFields({ title: e.target.value })}
+            value={user_title}
+            onChange={(e) => updateFields({ user_title: e.target.value })}
           >
             <MenuItem value="Mr">Mr</MenuItem>
             <MenuItem value="Mrs">Mrs</MenuItem>
@@ -75,8 +75,8 @@ export function UserForm({
             label="First Name"
             required
             type="text"
-            value={firstName}
-            onChange={(e) => updateFields({ firstName: e.target.value })}
+            value={user_firstName}
+            onChange={(e) => updateFields({ user_firstName: e.target.value })}
           />
         </Grid>
         <Grid item xs={5}>
@@ -85,8 +85,8 @@ export function UserForm({
             label="Last Name"
             required
             type="text"
-            value={lastName}
-            onChange={(e) => updateFields({ lastName: e.target.value })}
+            value={user_lastName}
+            onChange={(e) => updateFields({ user_lastName: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -95,8 +95,8 @@ export function UserForm({
             label="Postal Address"
             required
             type="text"
-            value={postalAddress}
-            onChange={(e) => updateFields({ postalAddress: e.target.value })}
+            value={user_postalAddress}
+            onChange={(e) => updateFields({ user_postalAddress: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -105,8 +105,8 @@ export function UserForm({
             label="Address"
             required
             type="text"
-            value={address}
-            onChange={(e) => updateFields({ address: e.target.value })}
+            value={user_address}
+            onChange={(e) => updateFields({ user_address: e.target.value })}
           />
         </Grid>
         <Grid item xs={6}>
@@ -115,8 +115,8 @@ export function UserForm({
             label="Suburb"
             required
             type="text"
-            value={suburb}
-            onChange={(e) => updateFields({ suburb: e.target.value })}
+            value={user_suburb}
+            onChange={(e) => updateFields({ user_suburb: e.target.value })}
           />
         </Grid>
         <Grid item xs={6}>
@@ -125,8 +125,8 @@ export function UserForm({
             label="Postcode"
             required
             type="text"
-            value={postcode}
-            onChange={(e) => updateFields({ postcode: e.target.value })}
+            value={user_postcode}
+            onChange={(e) => updateFields({ user_postcode: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -135,8 +135,8 @@ export function UserForm({
             label="State"
             required
             type="text"
-            value={state}
-            onChange={(e) => updateFields({ state: e.target.value })}
+            value={user_state}
+            onChange={(e) => updateFields({ user_state: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -145,8 +145,8 @@ export function UserForm({
             label="Country"
             required
             type="text"
-            value={country}
-            onChange={(e) => updateFields({ country: e.target.value })}
+            value={user_country}
+            onChange={(e) => updateFields({ user_country: e.target.value })}
           />
         </Grid>
         <Grid item xs={12}>
@@ -154,34 +154,34 @@ export function UserForm({
             row
             aria-label="preferredContact"
             name="preferredContact"
-            value={preferredContact}
-            onChange={(e) => updateFields({ preferredContact: e.target.value })}
+            value={user_preferredContact}
+            onChange={(e) => updateFields({ user_preferredContact: e.target.value })}
           >
             <FormControlLabel value="Landline" control={<Radio />} label="Landline" />
             <FormControlLabel value="Mobile" control={<Radio />} label="Mobile" />
           </RadioGroup>
         </Grid>
-        {preferredContact === 'Landline' && (
+        {user_preferredContact === 'Landline' && (
           <Grid item xs={12}>
             <TextField
               fullWidth
               label="Landline"
               required
               type="text"
-              value={landline}
-              onChange={(e) => updateFields({ landline: e.target.value })}
+              value={user_landline}
+              onChange={(e) => updateFields({ user_landline: e.target.value })}
             />
           </Grid>
         )}
-        {preferredContact === 'Mobile' && (
+        {user_preferredContact === 'Mobile' && (
           <Grid item xs={12}>
             <TextField
               fullWidth
               label="Mobile Phone"
               required
               type="text"
-              value={mobile}
-              onChange={(e) => updateFields({ mobile: e.target.value })}
+              value={user_mobile}
+              onChange={(e) => updateFields({ user_mobile: e.target.value })}
             />
           </Grid>
         )}
@@ -191,8 +191,8 @@ export function UserForm({
             label="Email"
             required
             type="email"
-            value={email}
-            onChange={(e) => updateFields({ email: e.target.value })}
+            value={user_email}
+            onChange={(e) => updateFields({ user_email: e.target.value })}
           />
         </Grid>
       </Grid>

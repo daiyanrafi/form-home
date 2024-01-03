@@ -3,28 +3,28 @@ import React from 'react';
 import { Typography, Grid, TextField, Select, MenuItem, Input, FormControlLabel, Checkbox, Button } from '@mui/material';
 
 type FinalizeSubmissionFormProps = {
-  bestTime: string;
-  howDidYouHear: string;
-  attachFile: File | null;
-  isRobot: boolean;
+  final_sub_bestTime: string;
+  final_sub_howDidYouHear: string;
+  final_sub_attachFile: File | null;
+  final_sub_isRobot: boolean;
   updateFields: (fields: Partial<{
-    bestTime: string;
-    howDidYouHear: string;
-    attachFile: File | null;
-    isRobot: boolean;
+    final_sub_bestTime: string;
+    final_sub_howDidYouHear: string;
+    final_sub_attachFile: File | null;
+    final_sub_isRobot: boolean;
   }>) => void;
 };
 
 export function FinalizeSubmissionForm({
-  bestTime,
-  howDidYouHear,
-  attachFile,
-  isRobot,
+  final_sub_bestTime,
+  final_sub_howDidYouHear,
+  final_sub_attachFile,
+  final_sub_isRobot,
   updateFields,
 }: FinalizeSubmissionFormProps) {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
-    updateFields({ attachFile: file || null });
+    updateFields({ final_sub_attachFile: file || null });
   };
 
   return (
@@ -42,8 +42,8 @@ export function FinalizeSubmissionForm({
             required
             label="Best Time"
             select
-            value={bestTime}
-            onChange={(e) => updateFields({ bestTime: e.target.value })}
+            value={final_sub_bestTime}
+            onChange={(e) => updateFields({ final_sub_bestTime: e.target.value })}
           >
             <MenuItem value="morning">Morning</MenuItem>
             <MenuItem value="evening">Evening</MenuItem>
@@ -58,8 +58,8 @@ export function FinalizeSubmissionForm({
             required
             label="How did you hear about us?"
             select
-            value={howDidYouHear}
-            onChange={(e) => updateFields({ howDidYouHear: e.target.value })}
+            value={final_sub_howDidYouHear}
+            onChange={(e) => updateFields({ final_sub_howDidYouHear: e.target.value })}
           >
             <MenuItem value="tv">TV</MenuItem>
             <MenuItem value="radio">Radio</MenuItem>
@@ -73,7 +73,7 @@ export function FinalizeSubmissionForm({
           />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="body1" gutterBottom style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic',  marginTop: '10px', marginBottom: '1px'}}>
+          <Typography variant="body1" gutterBottom style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginTop: '10px', marginBottom: '1px' }}>
             <p>By submitting this form, I authorise the Energy & Water Ombudsman SA to consider the complaint against the energy or water supplier specified in this form.</p>
             <p>I also authorise the Energy & Water Ombudsman SA to:</p>
 
@@ -85,13 +85,13 @@ export function FinalizeSubmissionForm({
 
           </Typography>
         </Grid>
-        <Grid item xs={12} style={{fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+        <Grid item xs={12} style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
           <FormControlLabel
             control={
               <Checkbox
                 required
-                checked={isRobot}
-                onChange={() => updateFields({ isRobot: !isRobot })}
+                checked={final_sub_isRobot}
+                onChange={() => updateFields({ final_sub_isRobot: !final_sub_isRobot })}
               />
             }
             label="I am not a robot"

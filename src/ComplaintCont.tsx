@@ -3,29 +3,29 @@ import React from 'react';
 import { TextField, Typography, Grid, MenuItem, Checkbox, FormControlLabel } from '@mui/material';
 
 type ComplaintContProps = {
-  concession: string;
-  concessionTypes: string[];
-  hasComplaint: string;
-  complaintDescription: string;
-  agree: boolean;
-  treeIdentification: string;
+  complaint_cont_concession: string;
+  complaint_cont_concessionTypes: string[];
+  complaint_cont_hasComplaint: string;
+  complaint_cont_complaintDescription: string;
+  complaint_cont_agree: boolean;
+  complaint_cont_treeIdentification: string;
   updateFields: (fields: Partial<{
-    concession: string;
-    concessionTypes: string[];
-    hasComplaint: string;
-    complaintDescription: string;
-    agree: boolean;
-    treeIdentification: string;
+    complaint_cont_concession: string;
+    complaint_cont_concessionTypes: string[];
+    complaint_cont_hasComplaint: string;
+    complaint_cont_complaintDescription: string;
+    complaint_cont_agree: boolean;
+    complaint_cont_treeIdentification: string;
   }>) => void;
 };
 
 export function ComplaintCont({
-  concession,
-  concessionTypes,
-  hasComplaint,
-  complaintDescription,
-  agree,
-  treeIdentification,
+  complaint_cont_concession,
+  complaint_cont_concessionTypes,
+  complaint_cont_hasComplaint,
+  complaint_cont_complaintDescription,
+  complaint_cont_agree,
+  complaint_cont_treeIdentification,
   updateFields,
 }: ComplaintContProps) {
   return (
@@ -35,25 +35,25 @@ export function ComplaintCont({
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={15}>
-        <Typography variant="body1" gutterBottom style={{ color: '#073c82', marginTop: '10px', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
-      Do you currently have a concession card? If so, which one?
-      </Typography>
+          <Typography variant="body1" gutterBottom style={{ color: '#073c82', marginTop: '10px', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+            Do you currently have a concession card? If so, which one?
+          </Typography>
           <TextField
             fullWidth
             required
             select
             label="Please Select"
-            value={concession}
-            onChange={(e) => updateFields({ concession: e.target.value })}
+            value={complaint_cont_concession}
+            onChange={(e) => updateFields({ complaint_cont_concession: e.target.value })}
           >
             <MenuItem value="Yes">Yes</MenuItem>
             <MenuItem value="No">No</MenuItem>
           </TextField>
         </Grid>
 
-        <Grid container spacing={1} style={{marginLeft: '10px'}}>
+        <Grid container spacing={1} style={{ marginLeft: '10px' }}>
           <Grid item xs={15}>
-            <Typography variant="body1" gutterBottom style={{  marginTop: '20px', marginBottom: '1px', fontWeight: 'bold', fontSize: '15px'}}>
+            <Typography variant="body1" gutterBottom style={{ marginTop: '20px', marginBottom: '1px', fontWeight: 'bold', fontSize: '15px' }}>
               Concession Type:
             </Typography>
           </Grid>
@@ -61,12 +61,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('a')}
+                  checked={complaint_cont_concessionTypes.includes('a')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('a')
-                      ? concessionTypes.filter((type) => type !== 'a')
-                      : [...concessionTypes, 'a'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('a')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'a')
+                      : [...complaint_cont_concessionTypes, 'a'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -84,12 +84,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('b')}
+                  checked={complaint_cont_concessionTypes.includes('b')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('b')
-                      ? concessionTypes.filter((type) => type !== 'b')
-                      : [...concessionTypes, 'b'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('b')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'b')
+                      : [...complaint_cont_concessionTypes, 'b'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -109,12 +109,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('c')}
+                  checked={complaint_cont_concessionTypes.includes('c')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('c')
-                      ? concessionTypes.filter((type) => type !== 'c')
-                      : [...concessionTypes, 'c'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('c')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'c')
+                      : [...complaint_cont_concessionTypes, 'c'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -135,12 +135,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('d')}
+                  checked={complaint_cont_concessionTypes.includes('d')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('d')
-                      ? concessionTypes.filter((type) => type !== 'd')
-                      : [...concessionTypes, 'd'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('d')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'd')
+                      : [...complaint_cont_concessionTypes, 'd'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -161,12 +161,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('e')}
+                  checked={complaint_cont_concessionTypes.includes('e')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('e')
-                      ? concessionTypes.filter((type) => type !== 'e')
-                      : [...concessionTypes, 'e'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('e')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'e')
+                      : [...complaint_cont_concessionTypes, 'e'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -188,12 +188,12 @@ export function ComplaintCont({
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={concessionTypes.includes('k')}
+                    checked={complaint_cont_concessionTypes.includes('k')}
                     onChange={() => {
-                      const updatedTypes = concessionTypes.includes('k')
-                        ? concessionTypes.filter((type) => type !== 'k')
-                        : [...concessionTypes, 'k'];
-                      updateFields({ concessionTypes: updatedTypes });
+                      const updatedTypes = complaint_cont_concessionTypes.includes('k')
+                        ? complaint_cont_concessionTypes.filter((type) => type !== 'k')
+                        : [...complaint_cont_concessionTypes, 'k'];
+                      updateFields({ complaint_cont_concessionTypes: updatedTypes });
                     }}
                   />
                 }
@@ -217,12 +217,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('g')}
+                  checked={complaint_cont_concessionTypes.includes('g')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('g')
-                      ? concessionTypes.filter((type) => type !== 'g')
-                      : [...concessionTypes, 'g'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('g')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'g')
+                      : [...complaint_cont_concessionTypes, 'g'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -243,12 +243,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('h')}
+                  checked={complaint_cont_concessionTypes.includes('h')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('h')
-                      ? concessionTypes.filter((type) => type !== 'h')
-                      : [...concessionTypes, 'h'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('h')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'h')
+                      : [...complaint_cont_concessionTypes, 'h'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -269,12 +269,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('f')}
+                  checked={complaint_cont_concessionTypes.includes('f')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('f')
-                      ? concessionTypes.filter((type) => type !== 'f')
-                      : [...concessionTypes, 'f'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('f')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'f')
+                      : [...complaint_cont_concessionTypes, 'f'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -295,12 +295,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('i')}
+                  checked={complaint_cont_concessionTypes.includes('i')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('i')
-                      ? concessionTypes.filter((type) => type !== 'i')
-                      : [...concessionTypes, 'i'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('i')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'i')
+                      : [...complaint_cont_concessionTypes, 'i'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -321,12 +321,12 @@ export function ComplaintCont({
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={concessionTypes.includes('j')}
+                  checked={complaint_cont_concessionTypes.includes('j')}
                   onChange={() => {
-                    const updatedTypes = concessionTypes.includes('j')
-                      ? concessionTypes.filter((type) => type !== 'j')
-                      : [...concessionTypes, 'j'];
-                    updateFields({ concessionTypes: updatedTypes });
+                    const updatedTypes = complaint_cont_concessionTypes.includes('j')
+                      ? complaint_cont_concessionTypes.filter((type) => type !== 'j')
+                      : [...complaint_cont_concessionTypes, 'j'];
+                    updateFields({ complaint_cont_concessionTypes: updatedTypes });
                   }}
                 />
               }
@@ -363,8 +363,8 @@ export function ComplaintCont({
           />
         </Grid> */}
 
-       <Grid item xs={15}>
-        <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+        <Grid item xs={15}>
+          <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
             Is there anything about you or your personal circumstances that we need to consider, that will help us with your complaint?
           </Typography>
           <TextField
@@ -372,22 +372,22 @@ export function ComplaintCont({
             label="Please write here."
             required
             multiline
-            value={complaintDescription}
-            onChange={(e) => updateFields({ complaintDescription: e.target.value })}
+            value={complaint_cont_complaintDescription}
+            onChange={(e) => updateFields({ complaint_cont_complaintDescription: e.target.value })}
           />
-        </Grid> 
+        </Grid>
 
-        <Grid item xs={15} style={{ color: '#de290d', marginTop: '10px', fontFamily: 'Arial, sans-serif'}}>
+        <Grid item xs={15} style={{ color: '#de290d', marginTop: '10px', fontFamily: 'Arial, sans-serif' }}>
           <FormControlLabel
             control={
               <Checkbox
                 // required
-                checked={agree}
-                onChange={() => updateFields({ agree: !agree })}
+                checked={complaint_cont_agree}
+                onChange={() => updateFields({ complaint_cont_agree: !complaint_cont_agree })}
               />
             }
             label={
-              <Typography variant="body1" style={{fontSize: '12px' }}>
+              <Typography variant="body1" style={{ fontSize: '12px' }}>
                 I agree for this information to be shared with relevant parties to assist with this complaint.
               </Typography>
             }
@@ -396,15 +396,15 @@ export function ComplaintCont({
 
         <Grid item xs={15}>
           <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
-          Do you identify as an Aboriginal ot Torres Straait Islander person?
+            Do you identify as an Aboriginal ot Torres Straait Islander person?
           </Typography>
           <TextField
             fullWidth
             select
             required
             label="Please Select"
-            value={treeIdentification}
-            onChange={(e) => updateFields({ treeIdentification: e.target.value })}
+            value={complaint_cont_treeIdentification}
+            onChange={(e) => updateFields({ complaint_cont_treeIdentification: e.target.value })}
           >
             <MenuItem value="Yes">Yes</MenuItem>
             <MenuItem value="No">No</MenuItem>
