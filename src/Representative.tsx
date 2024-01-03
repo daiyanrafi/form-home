@@ -181,10 +181,10 @@ export function RepresentativeForm({
           />
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="body1" gutterBottom style={{ color: '#073c82', marginTop: '10px', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+          <Typography variant="body1" gutterBottom style={{ color: '#073c82', marginTop: '10px', fontFamily: 'Arial, sans-serif', fontSize: '12px', fontStyle: 'italic', marginBottom: '16px' }}>
             If you are acting on behalf of another person, you are required to provide a singed Authority to Act form. Alternatively, you can also post the Authority to Act form to us on GPO Box 2947, Adelaide SA 5001.
 
-            <p style={{ marginBottom: '16px' }}><a href="www.google.com">Download Authority Form</a></p>
+            <p style={{ marginBottom: '12px' }}><a href="www.google.com">Download Authority Form</a></p>
 
             <p style={{ color: 'red', fontSize: '10px' }}>You can skip this page, if you want. Press the 'NEXT' button.</p>
           </Typography>
