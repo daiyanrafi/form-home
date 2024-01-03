@@ -377,7 +377,7 @@ export function ComplaintCont({
           />
         </Grid> 
 
-        <Grid item xs={15}>
+        <Grid item xs={15} style={{ color: '#de290d', marginTop: '10px', fontFamily: 'Arial, sans-serif'}}>
           <FormControlLabel
             control={
               <Checkbox
@@ -387,7 +387,7 @@ export function ComplaintCont({
               />
             }
             label={
-              <Typography variant="body1" style={{ color: '#de290d', marginTop: '16px', fontFamily: 'Arial, sans-serif', fontSize: '12px' }}>
+              <Typography variant="body1" style={{fontSize: '12px' }}>
                 I agree for this information to be shared with relevant parties to assist with this complaint.
               </Typography>
             }

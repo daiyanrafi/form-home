@@ -80,12 +80,12 @@ export function FinalizeSubmissionForm({
             <p>- exchange my information, including relevant sensitive information, to other parties, consultants or external organisations where reasonably necessary for the purpose of dealing with the complaint, and as required or permitted by law;</p>
             <p>- refer the complaint to another body or dispute resolution service where the Energy & Water Ombudsman SA decides it is appropriate.</p>
 
-            <p>For general information on the Energy & Water Ombudsman SA deals with information provided to us and the complainant's privacy rights, see our <a href="your-privacy-policy-link">privacy policy</a>.</p>
-            <p>Details of our complaint handling process can be found <a href="your-complaint-handling-process-link">here</a>.</p>
+            <p>For general information on the Energy & Water Ombudsman SA deals with information provided to us and the complainant's privacy rights, see our <a href="www.google.com">privacy policy</a>.</p>
+            <p>Details of our complaint handling process can be found <a href="www.google.com">here</a>.</p>
 
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} style={{fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
           <FormControlLabel
             control={
               <Checkbox

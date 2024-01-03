@@ -30,12 +30,16 @@ export function ComplaintForm({
       <Typography variant="h6" gutterBottom>
         Complaint Information
       </Typography>
+      <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please fill-up you complaint below</p>
       <Grid container spacing={2}>
         <Grid item xs={12}>
+        <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+        Name of supplier you wish to complain about
+          </Typography>
           <TextField
             fullWidth
             autoFocus
-            label="Name of the Supplier"
+            label="Select Supplier"
             required
             select
             value={supplier}
@@ -47,9 +51,12 @@ export function ComplaintForm({
           </TextField>
         </Grid>
         <Grid item xs={12}>
+        <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+        What services is the complaint about
+          </Typography>
           <TextField
             fullWidth
-            label="Services"
+            label="Select Services"
             required
             select
             value={service}
@@ -61,9 +68,11 @@ export function ComplaintForm({
           </TextField>
         </Grid>
         <Grid item xs={12}>
+        <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>
+        Account Number (If applicable)
+          </Typography>
           <TextField
             fullWidth
-            required
             label="Account Number"
             value={accountNumber}
             onChange={(e) => updateFields({ accountNumber: e.target.value })}

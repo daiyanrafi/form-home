@@ -9,6 +9,7 @@ import { IncidentAddressForm } from './IncidentAddressForm';
 import StartPage from './StartPage';
 import { ComplaintCont } from './ComplaintCont';
 import { FinalizeSubmissionForm } from './FinalizeSubmissionForm';
+import { RepresentativeForm } from './Representative';
 
 type FormData = {
   title: string;
@@ -17,6 +18,7 @@ type FormData = {
   postalAddress: string;
   address: string;
   suburb: string;
+  postcode: string;
   country: string;
   preferredContact: string;
   landline: string;
@@ -38,7 +40,7 @@ type FormData = {
   // address: string;
   address1: string;
   // city: string;
-  postcode: string;
+  // postcode: string;
   // state: string;
   //complaint-cont---------------
   concession: string;
@@ -52,6 +54,20 @@ type FormData = {
   howDidYouHear: string;
   attachFile: File | null;
   isRobot: boolean;
+   // RepresentativeForm fields
+   representativeTitle: string;
+   representativeFirstName: string;
+   representativeLastName: string;
+   representativePostalAddress: string;
+  //  representativeAddress: string;
+   representativeSuburb: string;
+   representativePostcode: string;
+   representativeState: string;
+   representativeCountry: string;
+   representativePreferredContact: string;
+   representativeLandline: string;
+   representativeMobile: string;
+   representativeEmail: string;
 };
 
 const INITIAL_DATA: FormData = {
@@ -61,6 +77,7 @@ const INITIAL_DATA: FormData = {
   postalAddress: '',
   address: '',
   suburb: '',
+  // postcode:'',
   country: '',
   preferredContact: '',
   landline: '',
@@ -96,6 +113,20 @@ const INITIAL_DATA: FormData = {
   howDidYouHear: '',
   isRobot: false,
   attachFile: null,
+   // RepresentativeForm initial data
+   representativeTitle: '',
+   representativeFirstName: '',
+   representativeLastName: '',
+   representativePostalAddress: '',
+  //  representativeAddress: '',
+   representativeSuburb: '',
+   representativePostcode: '',
+   representativeState: '',
+   representativeCountry: '',
+   representativePreferredContact: '',
+   representativeLandline: '',
+   representativeMobile: '',
+   representativeEmail: '',
 };
 
 function App() {
@@ -121,6 +152,7 @@ function App() {
 
   const steps = [
     <UserForm {...data} updateFields={updateFields} />,
+    <RepresentativeForm {...data} updateFields={updateFields}/>,
     <AddressForm {...data} updateFields={updateFields} />,
     <IncidentAddressForm {...data} updateFields={updateFields} />,
     <ComplaintForm {...data} updateFields={updateFields} />,
