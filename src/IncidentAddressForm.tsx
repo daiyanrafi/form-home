@@ -30,7 +30,9 @@ export function IncidentAddressForm({
       <Typography variant="h6" gutterBottom>
         Incident Address
       </Typography>
-      <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>The incident address is the address where your supply is located and may be different to your postal address</p>
+      
+      <Typography style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>The incident address is the address where your supply is located and may be different to your postal address</Typography>
+      
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField

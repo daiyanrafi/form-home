@@ -30,7 +30,11 @@ export function ComplaintForm({
       <Typography variant="h6" gutterBottom>
         Complaint Information
       </Typography>
-      <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please fill-up you complaint below</p>
+
+      <Typography style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please fill-up you complaint below</Typography>
+
+      {/* <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please fill-up you complaint below</p> */}
+
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="body1" gutterBottom style={{ color: '#073c82', fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '16px' }}>

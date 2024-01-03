@@ -54,7 +54,9 @@ export function UserForm({
       <Typography variant="h6" gutterBottom>
         Your Details
       </Typography>
-      <p style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please Enter you details below</p>
+      
+      <Typography style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', fontStyle: 'italic', marginBottom: '20px' }}>Please Enter you details below</Typography>
+      
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <TextField
